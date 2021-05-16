@@ -61,20 +61,20 @@ class Link():
 
         # If not at the same x coordinate, reduce the difference
         if nextGold.x > my.x and self.check(my.x+1,my.y)==0:
-            return Directions.EAST
+            return Directions.EAST and print（my.x, my.y）
         else:cause=max(cause,self.check(my.x+1,my.y))
         if nextGold.x < my.x and self.check(my.x-1,my.y)==0:
-            return Directions.WEST
+            return Directions.WEST and print（my.x, my.y）
         else:cause=max(cause,self.check(my.x-1,my.y))
         # If not at the same y coordinate, reduce the difference
         if nextGold.y > my.y and self.check(my.x,my.y+1)==0:
-            return Directions.NORTH
+            return Directions.NORTH and print（my.x, my.y）
         else:cause=max(cause,self.check(my.x,my.y+1))
         if nextGold.y < my.y and self.check(my.x,my.y-1)==0:
-            return Directions.SOUTH
+            return Directions.SOUTH and print（my.x, my.y）
         else:cause=max(cause,self.check(my.x,my.y-1))
         if cause==2 and self.check(my.x,my.y)==0:return 0
-        if my.x<9 and self.check(my.x+1,my.y)==0:return Directions.EAST
-        if my.x>0 and self.check(my.x-1,my.y)==0:return Directions.WEST
-        if my.y<9 and self.check(my.x,my.y+1)==0:return Directions.NORTH
-        if my.y>0 and self.check(my.x,my.y-1)==0:return Directions.SOUTH
+        if my.x<9 and self.check(my.x+1,my.y)==0:return Directions.EAST and print（my.x, my.y）
+        if my.x>0 and self.check(my.x-1,my.y)==0:return Directions.WEST and print（my.x, my.y）
+        if my.y<9 and self.check(my.x,my.y+1)==0:return Directions.NORTH and print（my.x, my.y）
+        if my.y>0 and self.check(my.x,my.y-1)==0:return Directions.SOUTH and print（my.x, my.y）
